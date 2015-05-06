@@ -1,2 +1,2 @@
 # etdeucookie
-Plugin Joomla pour affiche l'avertissement sur l'utilisation des cookies.
+Plugin Joomla pour afficher l'avertissement sur l'utilisation des cookies.
