@@ -39,8 +39,9 @@ class  plgSystemEtdeucookie extends JPlugin {
 
                 $doc->addStyleDeclaration('
 #etd-cookie{font:normal 12px/16px Arial,Verdana,sans-serif;position:fixed;z-index:99999;top:0;right:0;margin:0 auto;color:' . $color . ';background:' . $bg. ';padding:5px}
-#etd-cookie-t{float:left;padding:5px;width:90%}
-#etd-cookie-b{float:left;padding:5px;width:10%}');
+#etd-cookie-t{float:left;padding:5px;width:85%}
+#etd-cookie-b{float:left;padding:5px;width:15%}
+@media(max-width:767px){#etd-cookie-t,#etd-cookie-b{float:none;width:100%;text-align:center}}');
 
                 $html[] = '<div id="etd-cookie">';
                 $html[] = '  <div id="etd-cookie-t">' . addslashes($message) . '</div>';
