@@ -50,7 +50,7 @@ class  plgSystemEtdeucookie extends JPlugin {
 
                 JHtml::_('jquery.framework');
                 $doc->addScriptDeclaration("
-jQuery(document).on('ready', function() {
+jQuery(document).on('ready', (function($) {
     $('body').append('" . implode($html) . "');
     $('#etd-cookie-b button').on('click', function(e) {
         e.preventDefault();
@@ -59,7 +59,7 @@ jQuery(document).on('ready', function() {
         document.cookie = 'etdeucookie=ok; expires=' + t.toUTCString();
         $('#etd-cookie').remove();
     });
-});");
+})(jQuery));");
 
             }
 
