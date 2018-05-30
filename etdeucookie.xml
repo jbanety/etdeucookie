@@ -1,56 +1,60 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<extension version="3.0" type="plugin" group="system" method="upgrade">
+<extension version="1.1.2" type="plugin" group="system" method="upgrade">
     <name>plg_system_etdcookie</name>
     <creationDate>6 Mai 2015</creationDate>
     <author>ETD Solutions</author>
     <authorEmail>support@etd-solutions.com</authorEmail>
-    <authorUrl>http://www.etd-solutions.com</authorUrl>
-    <copyright>Copyright (C) 2015 ETD Solutions. Tous droits réservés.</copyright>
-    <license>Utilisation réservée aux clients d'ETD Solutions.</license>
-    <version>1.0</version>
-    <description>Affiche la bannière d'informations sur l'utilisation des cookies.</description>
+    <authorUrl>etd-solutions.com</authorUrl>
+    <copyright>Copyright (C) 2015 - 2018 ETD Solutions. All rights reserved.</copyright>
+    <license>Apache Version 2 (https://raw.githubusercontent.com/jbanety/etdeucookie/master/LICENSE)</license>
+    <version>1.1.2</version>
+    <description>PLG_SYSTEM_ETDEUCOOKIE_XML_DESCRIPTION</description>
     <files>
         <filename plugin="etdeucookie">etdeucookie.php</filename>
         <filename>etdeucookie.xml</filename>
     </files>
-        <config>
+    <languages>
+        <language tag="fr-FR">fr-FR.plg_system_etdeucookie.ini</language>
+        <language tag="fr-FR">fr-FR.plg_system_etdeucookie.sys.ini</language>
+    </languages>
+    <config>
         <fields name="params">
             <fieldset name="basic" addfieldpath="/administrator/components/com_content/models/fields">
 
                 <field
-                        name="color"
+                        name="textcolor"
                         type="color"
                         default="#FFFFFF"
-                        label="Couleur du texte"
-                        description=""
-                        />
+                        label="PLG_SYSTEM_ETDEUCOOKIE_CONFIG_TEXTCOLOR_LABEL"
+                        description="PLG_SYSTEM_ETDEUCOOKIE_CONFIG_TEXTCOLOR_DESC"
+                />
 
                 <field
-                        name="bg"
+                        name="bgcolor"
                         type="color"
                         default="#000000"
-                        label="Couleur de fond du bandeau"
-                        description=""
+                        label="PLG_SYSTEM_ETDEUCOOKIE_CONFIG_BGCOLOR_LABEL"
+                        description="PLG_SYSTEM_ETDEUCOOKIE_CONFIG_BGCOLOR_DESC"
                 />
 
                 <field
                         name="message"
                         type="textarea"
                         default="En poursuivant votre navigation sur ce site, sans modifier le paramétrage de vos cookies, vous acceptez l'utilisation de cookies susceptibles de vous proposer des services, offres ou publicités adaptés à vos centres d'intérêts et de réaliser des statistiques de visites."
-                        label="Message"
-                        description=""
+                        label="PLG_SYSTEM_ETDEUCOOKIE_CONFIG_MESSAGE_LABEL"
+                        description="PLG_SYSTEM_ETDEUCOOKIE_CONFIG_MESSAGE_DESC"
                         rows="10"
-                        />
+                />
 
                 <field
-                        name="article_id"
-                        type="modal_article"
-                        clear="true"
-                        default=""
-                        label="Article pour en savoir plus"
-                        description=""
-
-                />
+                        name="position"
+                        type="list"
+                        default="top"
+                        label="PLG_SYSTEM_ETDEUCOOKIE_CONFIG_POSITION_LABEL"
+                        description="PLG_SYSTEM_ETDEUCOOKIE_CONFIG_POSITION_DESC">
+                    <option value="top">PLG_SYSTEM_ETDEUCOOKIE_CONFIG_POSITION_OPTION_TOP</option>
+                    <option value="bottom">PLG_SYSTEM_ETDEUCOOKIE_CONFIG_POSITION_OPTION_BOTTOM</option>
+                </field>
             </fieldset>
         </fields>
     </config>

@@ -1,14 +1,15 @@
 <?php
 /**
- * @package      ETD EU Cookie
+ * @package     Joomla.Plugin
+ * @subpackage  System.Etdeucookie
  *
- * @version      1.0
- * @copyright    Copyright (C) 2015 ETD Solutions. Tous droits réservés.
- * @license      Apache Version 2 (https://raw.githubusercontent.com/jbanety/etdeucookie/master/LICENSE.md)
- * @author       ETD Solutions http://etd-solutions.com
+ * @version     1.1.2
+ * @copyright   Copyright (C) 2015 - 2018 ETD Solutions. Tous droits réservés.
+ * @license     Apache Version 2 (https://raw.githubusercontent.com/jbanety/etdeucookie/master/LICENSE)
+ * @author      ETD Solutions http://etd-solutions.com
  **/
 
-// no direct access
+// No direct access.
 defined('_JEXEC') or die('Restricted access');
 
 jimport('joomla.plugin.plugin');
@@ -20,25 +21,25 @@ class  plgSystemEtdeucookie extends JPlugin {
         $app = JFactory::getApplication();
         $doc = JFactory::getDocument();
 
-        // Seulement sur le site.
+        // Only on the site.
         if ($app->isSite()) {
 
-            // On récupère le cookie.
+            // Retrieve the cookie.
             $cookie = $app->input->cookie->get('etdeucookie');
 
-            // On ne travaille que si le cookie n'est pas accepté.
+            // If the cookie has not been accepted yet.
             if ($cookie !== "ok") {
 
-                // On récupère les paramètres.
-                $bg          = $this->params->get('bg', '#000000');
-                $color       = $this->params->get('color', '#FFFFFF');
-                $message     = $this->params->get('message', '');
-                //$article_id  = $this->params->get('article_id', '');
+                // Retrieve the parameters.
+                $bgcolor   = $this->params->get('bgcolor', '#000000');
+                $textcolor = $this->params->get('textcolor', '#FFFFFF');
+                $message   = $this->params->get('message', '');
+                $position  = $this->params->get('position', 'top');
 
                 $html = array();
 
                 $doc->addStyleDeclaration('
-#etd-cookie{font:normal 12px/16px Arial,Verdana,sans-serif;position:fixed;z-index:99999;top:0;right:0;margin:0 auto;color:' . $color . ';background:' . $bg. ';padding:5px}
+#etd-cookie{position:fixed;z-index:99999;' . $position . ':0;right:0;margin:0 auto;color:' . $textcolor . ';background:' . $bgcolor. ';padding:5px}
 #etd-cookie-t{float:left;padding:5px;width:85%}
 #etd-cookie-b{float:left;padding:5px;width:15%}
 @media(max-width:767px){#etd-cookie-t,#etd-cookie-b{float:none;width:100%;text-align:center}}');
