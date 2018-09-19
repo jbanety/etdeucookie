@@ -39,10 +39,12 @@ class  plgSystemEtdeucookie extends JPlugin {
                 $html = array();
 
                 $doc->addStyleDeclaration('
-#etd-cookie{position:fixed;z-index:99999;' . $position . ':0;right:0;margin:0 auto;color:' . $textcolor . ';background:' . $bgcolor. ';padding:5px}
-#etd-cookie-t{float:left;padding:5px;width:85%}
+#etd-cookie{position:fixed;z-index:99999;' . $position . ':0;right:0; margin:0 auto;padding: 5px; color:' . $textcolor . ';background:' . $bgcolor. '; }
+#etd-cookie-t{float:left;padding:5px; padding-top : 15px; width:85%}
 #etd-cookie-b{float:left;padding:5px;width:15%}
-@media(max-width:767px){#etd-cookie-t,#etd-cookie-b{float:none;width:100%;text-align:center}}');
+@media(max-width:767px){#etd-cookie-t,#etd-cookie-b{float:none;width:100%;text-align:center}}
+#etd-cookie{left:Opx; width: 100%}
+');
 
                 $html[] = '<div id="etd-cookie">';
                 $html[] = '  <div id="etd-cookie-t">' . addslashes($message) . '</div>';
